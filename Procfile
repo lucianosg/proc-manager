@@ -1,1 +1,1 @@
-web: mpn start
+web: npm start

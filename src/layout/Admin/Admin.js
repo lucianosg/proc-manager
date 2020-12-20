@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect, useLocation } from "react-router-dom";
-// import PerfectScrollbar from "perfect-scrollbar";
+import PerfectScrollbar from "perfect-scrollbar";
 import NotificationAlert from "react-notification-alert";
 
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
@@ -11,12 +11,12 @@ import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 import routes from "routes.js";
 import logo from "assets/img/logo.png";
 
-// var ps;
+var ps;
 
 const Admin = (props) => {
   const [activeColor, setActiveColor] = React.useState("green");
   const [sidebarMini, setSidebarMini] = React.useState(true);
-   const [opacity, /*setOpacity*/] = React.useState(0);
+  const [opacity, setOpacity] = React.useState(0);
   const [sidebarOpened, setSidebarOpened] = React.useState(false);
   const mainPanelRef = React.useRef(null);
   const notificationAlertRef = React.useRef(null);
@@ -30,51 +30,51 @@ const Admin = (props) => {
     }
   }, [location]);
 
-  // React.useEffect(() => {
-  //   let innerMainPanelRef = mainPanelRef;
-  //   if (navigator.platform.indexOf("Win") > -1) {
-  //     document.documentElement.classList.add("perfect-scrollbar-on");
-  //     document.documentElement.classList.remove("perfect-scrollbar-off");
-  //     ps = new PerfectScrollbar(mainPanelRef.current);
-  //     mainPanelRef.current &&
-  //       mainPanelRef.current.addEventListener("ps-scroll-y", showNavbarButton);
-  //     let tables = document.querySelectorAll(".table-responsive");
-  //     for (let i = 0; i < tables.length; i++) {
-  //       ps = new PerfectScrollbar(tables[i]);
-  //     }
-  //   }
+  React.useEffect(() => {
+    let innerMainPanelRef = mainPanelRef;
+    if (navigator.platform.indexOf("Win") > -1) {
+      document.documentElement.classList.add("perfect-scrollbar-on");
+      document.documentElement.classList.remove("perfect-scrollbar-off");
+      ps = new PerfectScrollbar(mainPanelRef.current);
+      mainPanelRef.current &&
+        mainPanelRef.current.addEventListener("ps-scroll-y", showNavbarButton);
+      let tables = document.querySelectorAll(".table-responsive");
+      for (let i = 0; i < tables.length; i++) {
+        ps = new PerfectScrollbar(tables[i]);
+      }
+    }
 
-  //   window.addEventListener("scroll", showNavbarButton);
-  //   return function cleanup() {
-  //     if (navigator.platform.indexOf("Win") > -1) {
-  //       ps.destroy();
-  //       document.documentElement.classList.add("perfect-scrollbar-off");
-  //       document.documentElement.classList.remove("perfect-scrollbar-on");
-  //       innerMainPanelRef.current &&
-  //         innerMainPanelRef.current.removeEventListener(
-  //           "ps-scroll-y",
-  //           showNavbarButton
-  //         );
-  //     }
-  //     window.removeEventListener("scroll", showNavbarButton);
-  //   };
-  // }, []);
+    window.addEventListener("scroll", showNavbarButton);
+    return function cleanup() {
+      if (navigator.platform.indexOf("Win") > -1) {
+        ps.destroy();
+        document.documentElement.classList.add("perfect-scrollbar-off");
+        document.documentElement.classList.remove("perfect-scrollbar-on");
+        innerMainPanelRef.current &&
+          innerMainPanelRef.current.removeEventListener(
+            "ps-scroll-y",
+            showNavbarButton
+          );
+      }
+      window.removeEventListener("scroll", showNavbarButton);
+    };
+  }, []);
 
-  // const showNavbarButton = () => {
-  //   if (
-  //     document.documentElement.scrollTop > 50 ||
-  //     document.scrollingElement.scrollTop > 50 ||
-  //     (mainPanelRef.current && mainPanelRef.current.scrollTop > 50)
-  //   ) {
-  //     setOpacity(1);
-  //   } else if (
-  //     document.documentElement.scrollTop <= 50 ||
-  //     document.scrollingElement.scrollTop <= 50 ||
-  //     (mainPanelRef.current && mainPanelRef.current.scrollTop <= 50)
-  //   ) {
-  //     setOpacity(0);
-  //   }
-  // };
+  const showNavbarButton = () => {
+    if (
+      document.documentElement.scrollTop > 50 ||
+      document.scrollingElement.scrollTop > 50 ||
+      (mainPanelRef.current && mainPanelRef.current.scrollTop > 50)
+    ) {
+      setOpacity(1);
+    } else if (
+      document.documentElement.scrollTop <= 50 ||
+      document.scrollingElement.scrollTop <= 50 ||
+      (mainPanelRef.current && mainPanelRef.current.scrollTop <= 50)
+    ) {
+      setOpacity(0);
+    }
+  };
 
   const getRoutes = (rout) => {
     return rout.map((prop, key) => {
@@ -169,7 +169,7 @@ const Admin = (props) => {
         routes={routes}
         activeColor={activeColor}
         logo={{
-          outterLink: "https://www.creative-tim.com/",
+          outterLink: "https://www.facebook.com/viniciusconsultorjuridicodigital",
           text: "Desburocratiza",
           imgSrc: logo,
         }}

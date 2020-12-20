@@ -198,7 +198,7 @@ const routes = [
       },
       {
         path: "/myextracts",
-        name: "Extratos Prórpios",
+        name: "Extratos - Prórpios",
         mini: "EP",
         component: MyExtracts,
         layout: "/admin",

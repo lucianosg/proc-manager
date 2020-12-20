@@ -158,7 +158,7 @@ const Sidebar = (props) => {
         <a
           href="https://www.facebook.com/viniciusconsultorjuridicodigital"
           className="simple-text logo-mini"
-          //target="_blank"
+          target="_blank"
           onClick={props.closeSidebar}>
           <div className="logo-img">
             <img src={logo.imgSrc} alt="react-logo" />
@@ -169,7 +169,7 @@ const Sidebar = (props) => {
         <a
           href={logo.outterLink}
           className="simple-text logo-normal"
-          //target="_blank"
+          target="_blank"
           onClick={props.closeSidebar}>
           {logo.text}
         </a>

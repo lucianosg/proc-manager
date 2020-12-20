@@ -25,7 +25,7 @@ const Footer = (props) => {
           <a href="https://www.facebook.com/Luciano.S.Gularte/">
             LUCIANO GULARTE
           </a>{"   "}
-          for a better web.
+          for a better web (v1.1)
         </div>
       </Container>
     </footer>

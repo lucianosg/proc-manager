@@ -32,6 +32,7 @@ const Dashboard = () => {
   const setBgChartData = (name) => {
     setbigChartData(name);
   };
+  
   return (
     <>
       <div className="content">

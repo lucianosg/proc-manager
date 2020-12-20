@@ -7,7 +7,7 @@ import {
   Container, Row, Col
 } from "reactstrap";
 
-const Register = () => {
+const Register = (props) => {
   const [state, setState] = React.useState({});
   React.useEffect(() => {
     document.body.classList.toggle("register-page");
@@ -16,6 +16,11 @@ const Register = () => {
     };
   });
   
+  const registerUser = (e) => {
+    e.preventDefault()
+    props.history.push('/admin/dashboard');
+  };
+
   return (
     <>
       <div className="content">
@@ -137,7 +142,7 @@ const Register = () => {
                     className="btn-round"
                     color="primary"
                     href="#pablo"
-                    onClick={(e) => e.preventDefault()}
+                    onClick={(e) => registerUser(e)}
                     size="lg">
                     VAMOS LÁ
                   </Button>

@@ -24,7 +24,7 @@ const ConsultPend = () => {
           <ol className="breadcrumb bg-transparent ml-3">
             <BreadcrumbItem>
               <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                Home
+                Início
               </a>
             </BreadcrumbItem>
             <BreadcrumbItem>

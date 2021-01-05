@@ -105,7 +105,7 @@ const FixedPlugin = (props) => {
           </li>
           <li className="adjustments-line">
             <div className="togglebutton switch-change-color mt-3 d-flex align-items-center justify-content-center">
-              <span className="label-switch">MODO CLARO</span>
+              <span className="label-switch">MODO ESCURO</span>
               <CustomInput
                 type="switch"
                 id="switch-2"
@@ -113,7 +113,7 @@ const FixedPlugin = (props) => {
                 value={darkMode}
                 className="mt-n4"
               />
-              <span className="label-switch ml-n3">MODO ESCURO</span>
+              <span className="label-switch ml-n3">MODO CLARO</span>
             </div>
           </li>
           <li className="adjustments-line" />          

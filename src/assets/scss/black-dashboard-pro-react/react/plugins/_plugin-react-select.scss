@@ -21,7 +21,7 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     box-shadow: 1px 2px 7px 1px rgba(0, 0, 0, 0.125);
     transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s,
       opacity 0.3s ease 0s, height 0s linear 0.35s;
-    background-color: $white;
+    background-color: #161d27;
     box-sizing: border-box;
     max-height: 200px;
     position: absolute;
@@ -73,7 +73,7 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
     padding-right: 1.5rem;
     display: block;
     outline: none;
-    color: #292b2c;
+    color: $medium-gray;
   }
   .react-select__menu {
     .react-select__option {
@@ -81,19 +81,19 @@ This file was modified entirely by Creative Tim for React-Select v2.0.0
       &:active {
         background-color: transparent;
       }
-      &.react-select__option--is-selected {
-        &,
-        &.react-select__option--is-focused {
-          &,
-          &:active {
-            background-color: $medium-gray;
-          }
-        }
-      }
+      // &.react-select__option--is-selected {
+      //   &,
+      //   &.react-select__option--is-focused {
+      //     &,
+      //     &:active {
+      //       background-color: #161d27; //$sidebar;
+      //     }
+      //   }
+      // }
       &.react-select__option--is-focused {
         &,
         &:active {
-          background-color: #f5f5f5;
+          background-color: #777777;
         }
       }
       &.react-select__option--is-disabled {
